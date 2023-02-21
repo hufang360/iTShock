@@ -1,8 +1,16 @@
-我写过的插件
+# 一些小的tshock插件
+- hfToy-射弹发射器，[源码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockhfToy1)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/hfToy1.dll)。
+
+- Boss还是护士，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockBossOrNurse)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/BossOrNurse.dll)。
+
+<br>
+
+# 我写过的插件
 
 | 项目名 | 链接 | 兼容TShock5.0 | 备注 |
 | --- | --- | --- | --- |
 | 检查背包 | https://gitee.com/hufang360/TShockCheckBag  | √ | |
+| 直播插件 | https://github.com/hufang360/TerrariaBLive  | √ | 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里 |
 | 查一查 | https://gitee.com/hufang360/TShockSearch  | √ | |
 | 自动注册 | https://gitee.com/hufang360/TShockAutoRegister | √ | |
 | 世界修改器 | https://gitee.com/hufang360/TShockWorldModify | √ | v1.4beta版本开始支持TShock5.0和泰拉1.4.4.x |
