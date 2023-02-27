@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <!-- 
+      Version information for an assembly consists of the following four values:
+
+          Major Version
+          Minor Version 
+          Build Number
+          Starting in version 4.2.5, we are no longer including the fourth decimal
+          location, which previously held the date and time.
+
+      Also, be sure to release on github with the exact assembly version tag as below
+      so that the update manager works correctly (via the Github releases api and mimic)
+    -->
+    <Version>1.0</Version>
+    <AssemblyTitle>ShowPowerMenu</AssemblyTitle>
+    <Company></Company>
+    <Product>ShowPowerMenu</Product>
+    <Copyright>Copyright © hufang360 2023</Copyright>
+    <!-- extras for nuget -->
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <Authors>hufang360</Authors>
+    <Description></Description>
+    <PackageId>ShowPowerMenu</PackageId>
+    <AssemblyName>ShowPowerMenu</AssemblyName> <!-- package name for nuget -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TShock" Version="5.1.3" />
+  </ItemGroup>
+
+</Project>
