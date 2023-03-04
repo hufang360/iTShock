@@ -60,11 +60,11 @@ public class Plugin : TerrariaPlugin
         {
             if (!args.Player.RealPlayer)
             {
-                args.Player.SendErrorMessage("显示力量菜单在游戏内进行操作！输入/spm help查看其它可用指令。");
+                args.Player.SendErrorMessage("请在游戏内进行操作！输入 /spm help 查看其它指令");
                 return;
             }
 
-            if (Con.names.Contains(args.Player.Name))
+            if (Con.names.Contains(args.Player.Name) || args.Player.HasPermission(PermAdmin))
             {
                 Enable(args.Player);
             }
@@ -78,7 +78,7 @@ public class Plugin : TerrariaPlugin
         {
             if (!args.Player.HasPermission(PermAdmin))
             {
-                args.Player.SendErrorMessage("你没有权限操作，如果你是建筑师，直接输入 /spm 就能显示力量菜单！");
+                args.Player.SendErrorMessage("你没有权限操作，如果你是建筑师/管理员，直接输入 /spm 就能显示力量菜单！");
                 return;
             }
         }
@@ -179,7 +179,8 @@ public class Plugin : TerrariaPlugin
     {
         // 修改成旅行模式
         op.TPlayer.difficulty = 3;
-        op.SendData(PacketTypes.PlayerInfo);
+        //op.SendData(PacketTypes.PlayerInfo);
+        NetMessage.SendData((int)PacketTypes.PlayerInfo, -1, -1, null, op.Index);
 
         if (Con.SendResearch)
         {
