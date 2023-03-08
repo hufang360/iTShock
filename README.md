@@ -5,12 +5,15 @@
 
 - Lang7，将服务器语言设置成中文，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockLang7)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/Lang7.dll)。
 
+- ShowPowerMenu，显示力量菜单，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockShowPowerMenu)，[插件下载](https://gitee.com/hufang360/tshock/blob/master/Plugins/ShowPowerMenu.dll)。
+
 <br>
 
 # 我写过的插件
 
 | 项目名 | 链接 | 兼容TShock5.0 | 备注 |
 | --- | --- | --- | --- |
+| TShock调试小助手 | https://gitee.com/hufang360/TDB | √ | |
 | 检查背包 | https://gitee.com/hufang360/TShockCheckBag  | √ | |
 | 直播插件 | https://github.com/hufang360/TerrariaBLive  | √ | 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里 |
 | 查一查 | https://gitee.com/hufang360/TShockSearch  | √ | |
