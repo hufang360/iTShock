@@ -4,13 +4,12 @@
 
 - [tshock文档搬运](./docs/4.4.0/说明.md)
 
-- ShowPowerMenu，显示力量菜单，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockShowPowerMenu)，[插件下载](https://gitee.com/hufang360/tshock/blob/master/Plugins/ShowPowerMenu.dll)。
 
 <br>
 
 # 我写过的插件
 
-- [写过的小插件](./plugins/4.4.0/说明.md)
+- [写过的小插件](./plugins/说明.md)
 
 | 项目名 | 链接 | 兼容TShock5.0 | 备注 |
 | --- | --- | --- | --- |
