@@ -134,12 +134,20 @@ public class Plugin : TerrariaPlugin
                 {
                     Con.names.Remove(playerName);
                     Save();
-                    var li = TShock.Players.Where(p => p != null && p.Active && p.Name == playerName);
-                    foreach (var p in li)
+                    if (playerName != args.Player.Name)
                     {
-                        p.Disconnect($"{args.Player.Name} 关闭了你的力量菜单，请重新上线！");
+                        var li = TShock.Players.Where(p => p != null && p.Active && p.Name == playerName && p.Name != args.Player.Name);
+                        foreach (var p in li)
+                        {
+                            p.Disconnect($"{args.Player.Name} 关闭了你的力量菜单，请重新上线！");
+                        }
+
+                        args.Player.SendSuccessMessage($"已将玩家 {playerName} 移出建筑师名单，为了数据安全已将其踢下线！");
                     }
-                    args.Player.SendSuccessMessage($"已将玩家 {playerName} 移出建筑师名单，为了数据安全已将其踢下线！");
+                    else
+                    {
+                        args.Player.SendSuccessMessage($"已将玩家 {playerName} 移出建筑师名单！");
+                    }
                 }
                 else
                 {

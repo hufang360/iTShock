@@ -1,13 +1,14 @@
-# 一些小的tshock插件
-- hfToy-射弹发射器，[源码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockhfToy1)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/hfToy1.dll)。
 
-- Boss还是护士，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockBossOrNurse)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/BossOrNurse.dll)。
+记录和tshock有关的内容，转载部分官方文档，自己写的插件，以及保存代码量小，且不怎么更新的小插件。
 
-- Lang7，将服务器语言设置成中文，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockLang7)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/Lang7.dll)。
+
+- [tshock文档搬运](./docs/4.4.0/说明.md)
 
 <br>
 
 # 我写过的插件
+
+- [写过的小插件](./plugins/4.4.0/说明.md)
 
 | 项目名 | 链接 | 兼容TShock5.0 | 备注 |
 | --- | --- | --- | --- |
@@ -33,3 +34,4 @@
 | 永夜 | https://gitee.com/hufang360/TShockLongNight | - | 已弃坑|
 | 死亡统计 | https://gitee.com/hufang360/TShockDeathCounter | - | 已弃坑|
 | 好事成双 | https://gitee.com/hufang360/TShockDoubleBoss | - | 已弃坑|
+
