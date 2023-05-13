@@ -9,10 +9,10 @@
 
 # 我写过的插件
 
-- [写过的小插件](./plugins/说明.md)
 
 | 项目名 | 链接 | 兼容TShock5.0 | 备注 |
 | --- | --- | --- | --- |
+| 图格剪贴板 | https://gitee.com/hufang360/TShockClipboard | √ | |
 | TShock调试小助手 | https://gitee.com/hufang360/TDB | √ | |
 | 检查背包 | https://gitee.com/hufang360/TShockCheckBag  | √ | |
 | 直播插件 | https://github.com/hufang360/TerrariaBLive  | √ | 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里 |
@@ -37,3 +37,21 @@
 | 死亡统计 | https://gitee.com/hufang360/TShockDeathCounter | - | 已弃坑|
 | 好事成双 | https://gitee.com/hufang360/TShockDoubleBoss | - | 已弃坑|
 
+
+<br/>
+
+---
+
+<br/>
+
+<br/>
+
+# 我写过的插件 - 非独立项目
+
+- hfToy-射弹发射器，[源码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockhfToy1)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/hfToy1.dll)。
+
+- Boss还是护士，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockBossOrNurse)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/BossOrNurse.dll)。
+
+- Lang7，将服务器语言设置成中文，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockLang7)，[插件下载](https://gitee.com/hufang360/tshock/raw/master/Plugins/Lang7.dll)。
+
+- ShowPowerMenu，显示力量菜单，[源代码](https://gitee.com/hufang360/tshock/tree/master/Plugins/TShockShowPowerMenu)，[插件下载](https://gitee.com/hufang360/tshock/blob/master/Plugins/ShowPowerMenu.dll)。
