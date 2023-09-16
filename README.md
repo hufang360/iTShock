@@ -5,7 +5,7 @@
 
 <br>
 
-# 我写过的插件 - 非独立项目 (保存在本仓库内，戴拿挎包个小，不怎么更新)
+# 我写过的插件 - 非独立项目 (保存在本仓库内，代码量小，不怎么更新)
 
 - hfToy-射弹发射器，[源码](./Plugins/TShockhfToy1)，[插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/Lang7.dll)。
 
@@ -33,22 +33,22 @@
 | 自动注册 | https://github.com/hufang360/TShockAutoRegister | √ | |
 | 世界修改器 | https://github.com/hufang360/TShockWorldModify | √ | v1.4beta版本开始支持TShock5.0和泰拉1.4.4.x |
 | 玩家管理 | https://github.com/hufang360/TShockPlayerManager | √ | |
-| 鱼店 | https://gitee.com/hufang360/TShockFishShop | √ | |
+| 鱼店 | https://github.com/hufang360/TShockFishShop | √ | |
 | 指令晶塔 | https://github.com/hufang360/TShockPylon | √ | |
 | 禁钓鱼 | https://github.com/hufang360/TShockDisableFishing | √ |
 | 找箱子 | https://github.com/hufang360/TShockShowMe | √ | .net4.x 项目，TShock4.x也能用 |
 | 箱子小工具 | https://github.com/hufang360/TShockChestTool  | √ | |
-| 大地动 | https://gitee.com/hufang360/TShockQuake | √ |
-| 好运来 | https://gitee.com/hufang360/TShockGoodLucky | √ | .net4.x 项目，请下载 [GoodLucky-v1.1-TShock5.0Beta.dll](https://gitee.com/hufang360/TShockGoodLucky/releases/download/v1.1/GoodLucky-v1.1-TShock5.0Beta.dll) |
-| 快速开服 | https://gitee.com/hufang360/TShockFastDeploy | √ | TShock4.x也能用 |
-| 垃圾佬 | https://gitee.com/hufang360/TShockTrashMan | √ | |
-| 更多商店物品 | https://gitee.com/hufang360/TShockMoreShopItem  | √ | TShock4.x也能用，商品数据跟1.4.4x不完全一样需要更新 |
-| 禁NPC | https://gitee.com/hufang360/TShockDisableNPC  | √ |  |
-| 让服务端允许生成“第一分形” | https://gitee.com/hufang360/TShockAllowFirstFractal  | √ | TShock4.x也能用，鱼店插件已经包含此插件的全部功能 |
-| 好好学习 | https://gitee.com/hufang360/TShockGoodStudy | - | 已弃坑 |
-| 永夜 | https://gitee.com/hufang360/TShockLongNight | - | 已弃坑|
-| 死亡统计 | https://gitee.com/hufang360/TShockDeathCounter | - | 已弃坑|
-| 好事成双 | https://gitee.com/hufang360/TShockDoubleBoss | - | 已弃坑|
+| 大地动 | https://github.com/hufang360/TShockQuake | √ |
+| 好运来 | https://github.com/hufang360/TShockGoodLucky | √ | .net4.x 项目，请下载 [GoodLucky-v1.1-TShock5.0Beta.dll](https://github.com/hufang360/TShockGoodLucky/releases/download/v1.1/GoodLucky-v1.1-TShock5.0Beta.dll) |
+| 快速开服 | https://github.com/hufang360/TShockFastDeploy | √ | TShock4.x也能用 |
+| 垃圾佬 | https://github.com/hufang360/TShockTrashMan | √ | |
+| 更多商店物品 | https://github.com/hufang360/TShockMoreShopItem  | √ | TShock4.x也能用，商品数据跟1.4.4x不完全一样需要更新 |
+| 禁NPC | https://github.com/hufang360/TShockDisableNPC  | √ |  |
+| 让服务端允许生成“第一分形” | https://github.com/hufang360/TShockAllowFirstFractal  | √ | TShock4.x也能用，鱼店插件已经包含此插件的全部功能 |
+| 好好学习 | https://github.com/hufang360/TShockGoodStudy | - | 已弃坑 |
+| 永夜 | https://github.com/hufang360/TShockLongNight | - | 已弃坑|
+| 死亡统计 | https://github.com/hufang360/TShockDeathCounter | - | 已弃坑|
+| 好事成双 | https://github.com/hufang360/TShockDoubleBoss | - | 已弃坑|
 
 
 <br/>
