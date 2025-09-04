@@ -26,7 +26,7 @@ show_help() {
 	echo ""
 	echo "示例:"
 	echo "  $0                                           # 使用默认设置"
-	echo "  $0 -server MyServer -dll full               # 指定服务器名和完整插件"
+	echo "  $0 -server S81 -dll full               # 指定服务器名和完整插件"
 	echo "  $0 -port 8888 -maxplayers 8 -difficulty 2  # 自定义端口、玩家数和难度"
 	echo ""
 	echo "插件模式说明:"
@@ -192,7 +192,7 @@ down_full() {
 	echo "正在下载完整版插件..."
 	for dll in "${dlls_full[@]}"; do
 		echo "下载: $dll"
-		curl -L -o "$plugins_dir" "$prefix_url/$dll"
+		curl -L -o "$plugins_dir/$dll" "$prefix_url/$dll"
 		if [ $? -eq 0 ]; then
 			echo "✓ $dll 下载成功"
 		else
@@ -205,7 +205,7 @@ down_lite() {
 	echo "正在下载精简版插件..."
 	for dll in "${dlls_lite[@]}"; do
 		echo "下载: $dll"
-		curl -L -o "$plugins_dir" "$prefix_url/$dll"
+		curl -L -o "$plugins_dir/$dll" "$prefix_url/$dll"
 		if [ $? -eq 0 ]; then
 			echo "✓ $dll 下载成功"
 		else
@@ -288,12 +288,37 @@ if [ $? -eq 0 ]; then
 		echo "  API端口: 未启用"
 	fi
 	echo "  服务器地址: 你服务器 ip:$port (本地)"
+	echo "  配置文件: $tshock_dir"
 	echo "  世界文件: $worlds_dir/world.wld"
 	echo "  插件目录: $plugins_dir"
 	echo "================================"
 
 	# 等待几秒让服务器启动
-	echo "等待服务器初始化..."
+	echo ""
+	echo "⏳ 服务器初始化中..."
+	echo ""
+	echo "📋 首次启动操作指南："
+	echo "================================"
+	echo "1️⃣ 查看地图创建进度"
+	echo "   首次启动需要创建地图，大约需要几分钟时间"
+	echo "   地图位置: $worlds_dir/world.wld"
+	echo "   查看进度: docker logs -f $container_name"
+	echo ""
+	echo "2️⃣ 进入服务器控制台"
+	echo "   等待地图创建完成后执行:"
+	echo "   docker attach --sig-proxy=false $container_name"
+	echo ""
+	echo "3️⃣ 开启强制开荒模式"
+	echo "   在控制台中输入: /fd init"
+	echo "   然后按 Enter 键确认"
+	echo ""
+	echo "4️⃣ 退出控制台"
+	echo "   使用 Ctrl+C 退出控制台（不会关闭服务器）"
+	echo ""
+	echo "5️⃣ 重启服务器完成配置"
+	echo "   docker restart $container_name"
+	echo "   重启完成后即可开始联机游戏！"
+	echo "================================"
 	sleep 3
 
 	# 检查容器状态
