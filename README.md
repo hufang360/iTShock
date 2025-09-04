@@ -5,7 +5,7 @@
 # 快速创建docker 的 tshock
 ```shell
 curl -L -o docker-fast.sh https://github.com/hufang360/iTShock/raw/refs/heads/master/docker-fast.sh
-bash docker-fast.sh
+bash docker-fast.sh "S81"
 ```
 
 <br>

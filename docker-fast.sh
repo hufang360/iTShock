@@ -22,6 +22,7 @@ show_help() {
 	echo "  -worldevil <类型>     世界邪恶类型: random|corrupt|crimson (默认: random)"
 	echo "  -difficulty <难度>    世界难度: 0-3 (0=普通, 1=专家, 2=大师, 3=旅程) (默认: 2)"
 	echo "  -maxplayers <数量>    最大玩家数 (默认: 8)"
+	echo "  -skipall              跳过所有插件下载"
 	echo "  -help                 显示此帮助信息"
 	echo ""
 	echo "示例:"
@@ -51,6 +52,7 @@ autocreate=3
 worldevil="random"
 difficulty=2
 maxplayers=8
+skipall=false # 是否跳过插件下载
 
 # 解析命令行参数
 while [[ $# -gt 0 ]]; do
@@ -128,6 +130,10 @@ while [[ $# -gt 0 ]]; do
 		maxplayers="$2"
 		shift 2
 		;;
+	-skipall)
+		skipall=true
+		shift 1
+		;;
 	*)
 		echo "错误: 未知参数 '$1'"
 		echo "使用 '$0 -help' 查看帮助信息"
@@ -141,7 +147,11 @@ echo "================================"
 echo "TShock 服务器配置"
 echo "================================"
 echo "服务器名称: $server"
-echo "插件模式: $dll"
+if [ "$skipall" = true ]; then
+	echo "插件模式: 跳过下载 (使用现有插件)"
+else
+	echo "插件模式: $dll"
+fi
 echo "游戏端口: $port"
 if [ "$port_resetapi_specified" = true ]; then
 	echo "API端口: $port_resetapi (已启用)"
@@ -216,7 +226,15 @@ down_lite() {
 
 # 根据dll参数选择下载模式
 echo ""
-if [ "$dll" = "full" ]; then
+if [ "$skipall" = true ]; then
+	echo "⏭️  跳过插件下载，使用现有插件文件"
+	echo "   插件目录: ./$server/plugins/"
+	if [ ! -d "./$server/plugins" ] || [ -z "$(ls -A ./$server/plugins 2>/dev/null)" ]; then
+		echo "   ⚠️  警告: 插件目录为空或不存在，服务器将以原版模式运行"
+	else
+		echo "   ✓ 发现现有插件文件"
+	fi
+elif [ "$dll" = "full" ]; then
 	echo "📦 开始下载完整版插件包..."
 	down_full
 else
@@ -270,7 +288,7 @@ fi
 
 # 添加卷映射和其他参数
 docker_cmd="$docker_cmd -v "$tshock_dir":/tshock -v "$worlds_dir":/worlds -v "$plugins_dir":/plugins $image"
-docker_cmd="$docker_cmd -world /worlds/world.wld -motd \"$motd\" -lang 7 -autocreate $autocreate -worldevil $worldevil -difficulty $difficulty -worldname \"$worldname\" -maxplayers $maxplayers"
+docker_cmd="$docker_cmd -world /worlds/world.wld -motd \"$motd\" -lang 7 -autocreate $autocreate -worldevil $worldevil -difficulty $difficulty -maxplayers $maxplayers"
 
 # 执行命令
 eval $docker_cmd
