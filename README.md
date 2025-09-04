@@ -2,6 +2,11 @@
 记录和tshock有关的内容，转载部分官方文档，自己写的插件，以及保存代码量小，且不怎么更新的小插件。
 
 
+# 快速创建docker 的 tshock
+```shell
+curl -L -o https://github.com/hufang360/iTShock/raw/refs/heads/master/docker-fast.sh
+bash docker-fast.sh
+```
 
 <br>
 
