@@ -4,23 +4,38 @@
 
 # docker快速开服
 ```shell
-docker run -itd --name tshock \
+docker run -it --name tshock \
   -p 7777:7777 \
-  -p 7878:7878 \
   -v /root/S1/tshock/:/tshock \
-  -v /root/S1/Worlds/:/worlds \
+  -v /root/S1/worlds/:/worlds \
   -v /root/S1/plugins/:/plugins \
   ghcr.io/pryaxis/tshock:latest \
   -world /worlds/world.wld \
+  -lang 7 \
   -autocreate 3 \
   -difficulty 2
 ```
+- `-lang 7`, 中文。
 - `-autocreate`, 世界大小，1=小, 2=中, 3=大。
 - `-difficulty`, 世界难度，0=普通, 1=专家, 2=大师, 3=旅行。
+
+
+```shell
+# 查看日志
+# - 按 Ctrl+C 退出查看
+docker logs -f tshock
+
+# 进入控制台
+# - 看不到旧的日志
+# - 先敲一个enter键，然后输入要执行的指令
+# - 先按 Ctrl+P，再按 Ctrl+Q 退出
+docker attach tshock
+```
+
 - 参考连接：
-    - [tshock命令行参数](https://github.com/Pryaxis/TShock/wiki/Command-line-parameters)
-    - [tshock官方镜像](https://github.com/Pryaxis/TShock/pkgs/container/tshock/416082073?tag=latest)
-- [个人常用的插件](./dlls/2509/) 
+  - [tshock命令行参数](https://github.com/Pryaxis/TShock/wiki/Command-line-parameters)
+  - [tshock官方镜像](https://github.com/Pryaxis/TShock/pkgs/container/tshock/416082073?tag=latest)
+  - [个人常用的插件](./dlls/2509/) 
 <br>
 
 
