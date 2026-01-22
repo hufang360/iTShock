@@ -6,12 +6,12 @@
 ```shell
 docker run -it --name tshock \
   -p 7777:7777 \
-  -v /root/S1/tshock/:/tshock \
-  -v /root/S1/worlds/:/worlds \
-  -v /root/S1/plugins/:/plugins \
+  -v ./data/tshock/:/tshock \
+  -v ./data/worlds/:/worlds \
+  -v ./data/plugins/:/plugins \
   ghcr.io/pryaxis/tshock:latest \
-  -world /worlds/world.wld \
   -lang 7 \
+  -world /worlds/world.wld \
   -autocreate 3 \
   -difficulty 2
 ```
@@ -21,21 +21,19 @@ docker run -it --name tshock \
 
 
 ```shell
-# 查看日志
-# - 按 Ctrl+C 退出查看
-docker logs -f tshock
-
 # 进入控制台
-# - 看不到旧的日志
-# - 先敲一个enter键，然后输入要执行的指令
-# - 先按 Ctrl+P，再按 Ctrl+Q 退出
+# - 按 Ctrl+P，Ctrl+Q 退出
 docker attach tshock
+
+# 查看日志
+# - 按 Ctrl+C 退出
+docker logs -f tshock
 ```
 
 - 参考连接：
   - [tshock命令行参数](https://github.com/Pryaxis/TShock/wiki/Command-line-parameters)
   - [tshock官方镜像](https://github.com/Pryaxis/TShock/pkgs/container/tshock/416082073?tag=latest)
-  - [个人常用的插件](./dlls/2509/) 
+  - 个人常用的插件, 见本仓库 [dlls](./dlls/) 
 <br>
 
 
@@ -67,7 +65,7 @@ docker attach tshock
 | 检查背包 | https://github.com/hufang360/TShockCheckBag  | ✅ | |
 | 直播插件 | https://github.com/hufang360/TerrariaBLive  | ✅ | 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里 |
 | 大地动 | https://github.com/hufang360/TShockQuake | ✅ |
-| 好运来 | https://github.com/hufang360/TShockGoodLucky | ✅ | .net4.x 项目，请下载 [GoodLucky-v1.1-TShock5.0Beta.dll](https://github.com/hufang360/TShockGoodLucky/releases/download/v1.1/GoodLucky-v1.1-TShock5.0Beta.dll) |
+| 好运来 | https://github.com/hufang360/TShockGoodLucky | ✅ | .net4.x 项目 |
 | 垃圾佬 | https://github.com/hufang360/TShockTrashMan | ✅ | |
 | 更多商店物品 | https://github.com/hufang360/TShockMoreShopItem  | ✅ | TShock4.x也能用，商品数据跟1.4.4x不完全一样需要更新 |
 | 禁NPC | https://github.com/hufang360/TShockDisableNPC  | ✅ |  |
