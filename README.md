@@ -40,56 +40,46 @@ docker logs -f tshock
 # 我写过的插件
 
 ## 常用
-
-| 项目名 | 链接 | 兼容TShock5.0 | 备注 |
-| --- | --- | --- | --- |
-| 自动注册 | https://github.com/hufang360/TShockAutoRegister | ✅ | fork别人的，然后做了修改 |
-| 快速开服 | https://github.com/hufang360/TShockFastDeploy | ✅ | TShock4.x也能用 |
-| 世界修改器 | https://github.com/hufang360/TShockWorldModify | ✅ | v1.4beta版本开始支持TShock5.0和泰拉1.4.4.x |
-| 玩家管理 | https://github.com/hufang360/TShockPlayerManager | ✅ | |
-| 鱼店 | https://github.com/hufang360/TShockFishShop | ✅ | |
-| 查一查 | https://github.com/hufang360/TShockSearch  | ✅ | |
-| 箱子小工具 | https://github.com/hufang360/TShockChestTool  | ✅ | |
-| 找箱子 | https://github.com/hufang360/TShockShowMe | ✅ | .net4.x 项目，TShock4.x也能用 |
+- 🔐 [AutoRegister](https://github.com/hufang360/TShockAutoRegister), 自动注册
+- 🚀 [FastDeploy](https://github.com/hufang360/TShockFastDeploy), 快速开服, TShock4.x也能用
+- 🌍 [WorldModify](https://github.com/hufang360/TShockWorldModify), 世界修改器, v1.4beta版本开始支持TShock5.0和泰拉1.4.4.x
+- 👥 [PlayerManager](https://github.com/hufang360/TShockPlayerManager), 玩家管理
+- 🐟 [FishShop](https://github.com/hufang360/TShockFishShop), 鱼店
+- 🔍 [Search](https://github.com/hufang360/TShockSearch), 查一查
+- 🔎 [ShowMe](https://github.com/hufang360/TShockShowMe), 找箱子, .net4.x 项目，TShock4.x也能用
+- 📦 [ChestTool](https://github.com/hufang360/TShockChestTool), 箱子小工具
 
 
 ## 更多
 这部分不怎么更新
 
-| 项目名 | 链接 | 兼容TShock5.0 | 备注 |
-| --- | --- | --- | --- |
-| 指令晶塔 | https://github.com/hufang360/TShockPylon | ✅ | |
-| 图格剪贴板 | https://github.com/hufang360/TShockClipboard | ✅ | |
-| 图格动画 | https://github.com/hufang360/TShockTileAnimate | ✅ | |
-| TShock调试小助手 | https://github.com/hufang360/TDB | ✅ | |
-| 检查背包 | https://github.com/hufang360/TShockCheckBag  | ✅ | |
-| 直播插件 | https://github.com/hufang360/TerrariaBLive  | ✅ | 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里 |
-| 大地动 | https://github.com/hufang360/TShockQuake | ✅ |
-| 好运来 | https://github.com/hufang360/TShockGoodLucky | ✅ | .net4.x 项目 |
-| 垃圾佬 | https://github.com/hufang360/TShockTrashMan | ✅ | |
-| 更多商店物品 | https://github.com/hufang360/TShockMoreShopItem  | ✅ | TShock4.x也能用，商品数据跟1.4.4x不完全一样需要更新 |
-| 禁NPC | https://github.com/hufang360/TShockDisableNPC  | ✅ |  |
-| 禁钓鱼 | https://github.com/hufang360/TShockDisableFishing | ✅ |
+- 💎 [Pylon](https://github.com/hufang360/TShockPylon), 指令晶塔
+- 📋 [Clipboard](https://github.com/hufang360/TShockClipboard), 图格剪贴板
+- 🎬 [TileAnimate](https://github.com/hufang360/TShockTileAnimate), 图格动画
+- 🔧 [TDB](https://github.com/hufang360/TDB), TShock调试小助手
+- 🎒 [CheckBag](https://github.com/hufang360/TShockCheckBag), 检查背包
+- 📺 [TerrariaBLive](https://github.com/hufang360/TerrariaBLive), 直播插件, 原项目由ArsiIksait编写，可以把哔哩哔哩直播间的弹幕发到游戏里
+- 🌋 [Quake](https://github.com/hufang360/TShockQuake), 大地动
+- 🍀 [GoodLucky](https://github.com/hufang360/TShockGoodLucky), 好运来, .net4.x 项目
+- 🗑️ [TrashMan](https://github.com/hufang360/TShockTrashMan), 垃圾佬
+- 🛒 [MoreShopItem](https://github.com/hufang360/TShockMoreShopItem), 更多商店物品, TShock4.x也能用，商品数据跟1.4.4x不完全一样需要更新
+- 🚫👾 [DisableNPC](https://github.com/hufang360/TShockDisableNPC), 禁NPC
+- 🚫🎣 [DisableFishing](https://github.com/hufang360/TShockDisableFishing), 禁钓鱼
 
 ## 弃坑
-| 项目名 | 链接 | 兼容TShock5.0 | 备注 |
-| --- | --- | --- | --- |
-| 好好学习 | https://github.com/hufang360/TShockGoodStudy | - | 已弃坑 |
-| 永夜 | https://github.com/hufang360/TShockLongNight | - | 已弃坑 |
-| 死亡统计 | https://github.com/hufang360/TShockDeathCounter | - | 已弃坑 |
-| 好事成双 | https://github.com/hufang360/TShockDoubleBoss | - | 已弃坑 |
-| 让服务端允许生成“第一分形” | https://github.com/hufang360/TShockAllowFirstFractal  | 已弃坑 | 鱼店插件默认包含此功能 |
+- 📚 [GoodStudy](https://github.com/hufang360/TShockGoodStudy), 好好学习, 已弃坑
+- 🌙 [LongNight](https://github.com/hufang360/TShockLongNight), 永夜, 已弃坑
+- 💀 [DeathCounter](https://github.com/hufang360/TShockDeathCounter), 死亡统计, 已弃坑
+- 👑 [DoubleBoss](https://github.com/hufang360/TShockDoubleBoss), 好事成双, 已弃坑
+- 🌌 [AllowFirstFractal](https://github.com/hufang360/TShockAllowFirstFractal), 让服务端允许生成"第一分形", 鱼店插件默认包含此功能
 
 
-## 非独立项目 
+## 非独立项目
 代码量小，不怎么更新，保存在本仓库内。
-| 项目名 | 源码 | 插件下载 | 备注 |
-| --- | --- | --- | --- |
-| hfToy-射弹发射器 | [源码](./Plugins/TShockhfToy1) | [插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/Lang7.dll) | |
-| hfToy-射弹发射器 | [源码](./Plugins/TShockhfToy1) | [插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/Lang7.dll) | |
-| Boss还是护士 | [源代码](./Plugins/TShockBossOrNurse) | [插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/BossOrNurse.dll) | |
-| Lang7，将服务器语言设置成中文 | [源代码](./Plugins/TShockLang7) | [插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/Lang7.dll) | |
-| ShowPowerMenu，显示力量菜单 | [源代码](./Plugins/TShockShowPowerMenu) | [插件下载](https://github.com/hufang360/MyTShock/raw/master/Plugins/ShowPowerMenu.dll) | |
+- 🎯 [hfToy](./Plugins/TShockhfToy1), 射弹发射器, [hfToy1.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/hfToy1.dll)
+- 🤔 [BossOrNurse](./Plugins/TShockBossOrNurse), Boss还是护士, [BossOrNurse.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/BossOrNurse.dll)
+- 🇨🇳 [Lang7](./Plugins/TShockLang7), 将服务器语言设置成中文, [Lang7.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/Lang7.dll)
+- ⚡ [ShowPowerMenu](./Plugins/TShockShowPowerMenu), 显示力量菜单, [ShowPowerMenu.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/ShowPowerMenu.dll)
 
 <br>
 
