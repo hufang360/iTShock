@@ -196,7 +196,7 @@ public class Plugin : TerrariaPlugin
             // 发送物品研究数据
             for (int i = 0; i < ItemID.Count; i++)
             {
-                var response = NetCreativeUnlocksModule.SerializeItemSacrifice(i, 9999);
+                var response = NetCreativeUnlocksPlayerReportModule.SerializeSacrificeRequest(op.Index, i, 9999);
                 NetManager.Instance.SendToClient(response, op.Index);
             }
 
