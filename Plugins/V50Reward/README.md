@@ -12,7 +12,8 @@ TShock 插件，每周四玩家可领取一次奖励。
 
 | 命令 | 权限 | 说明 |
 |------|------|------|
-| `/v50` | `v50reward.claim` | 领取周四奖励 |
+| `/v50` | `v50reward.claim` | 领取今日奖励 |
+| `/v50 help` | `v50reward.claim` | 查看命令帮助 |
 | `/v50 reload` | `v50reward.admin` | 重载配置文件 |
 | `/v50 reset` | `v50reward.admin` | 重置所有玩家领取记录 |
 | `/v50 reset <玩家名>` | `v50reward.admin` | 重置指定玩家记录 |
@@ -66,7 +67,7 @@ v50reward.admin    # 管理权限（重载/重置）
 
 | 字段 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `RewardDays` | int[] | `[4]` | 可领取的星期几（0=周日,1=周一,...,6=周六），支持多天如 `[3,4]` 表示周三和周四 |
+| `RewardDays` | int[] | `[4]` | 可领取的星期几（`1=周一,2=周二,...,7=周日`），`0` 自动兼容为周日(7)；支持多天如 `[3,4,5,6,7]` 表示周三~周日。加载时会自动去重并过滤无效值 |
 | `MaxRewardsPerWeek` | int | `1` | 每周可领取次数 |
 | `SkipDefault` | bool | `true` | `true` 时所有玩家直接从 RandomPool 抽取；`false` 时首次/断档给 DefaultReward |
 | `DefaultReward` | ItemData | 50金币 | SkipDefault=false 时，首次/断档领取的奖励 |

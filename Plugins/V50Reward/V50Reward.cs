@@ -17,8 +17,17 @@ namespace V50Reward
     {
         public override string Name => "V50Reward";
         public override string Author => "MiMo · hufang360";
-        public override Version Version => Assembly.GetExecutingAssembly().GetName().Version;
+        public override Version Version => GetPluginVersion();
         public override string Description => "疯四奖";
+
+        // 版本号取 csproj <Version>（如 1.1.0），不用 4 段补零的 AssemblyVersion
+        private static Version GetPluginVersion()
+        {
+            var attr = Assembly.GetExecutingAssembly()
+                .GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+            string value = attr?.InformationalVersion?.Split('+')[0] ?? "1.0.0";
+            return Version.TryParse(value, out var v) ? v : new Version(1, 0, 0);
+        }
 
         const string PermReward = "v50reward.claim";
         const string PermAdmin = "v50reward.admin";
@@ -35,7 +44,7 @@ namespace V50Reward
 
         public override void Initialize()
         {
-            Commands.ChatCommands.Add(new Command(PermReward, V50Command, "v50") { HelpText = "/v50 领奖 | /v50 reload | /v50 reset [玩家]" });
+            Commands.ChatCommands.Add(new Command(PermReward, V50Command, "v50") { HelpText = "/v50 领奖 | /v50 help | /v50 reload | /v50 reset [玩家]" });
 
             SaveDir = Path.Combine(TShock.SavePath, "V50Reward");
             DataPath = Path.Combine(SaveDir, "data.json");
@@ -60,6 +69,8 @@ namespace V50Reward
         private static void V50Command(CommandArgs args)
         {
             var player = args.Player;
+            if (player == null)  // 服务器控制台不处理领奖
+                return;
 
             if (args.Parameters.Count > 0)
             {
@@ -71,6 +82,14 @@ namespace V50Reward
                     case "reset":
                         HandleReset(args);
                         return;
+                    case "help":
+                    case "?":
+                        HandleHelp(args);
+                        return;
+                    default:
+                        // 未知子命令展示帮助，避免误领取
+                        HandleHelp(args);
+                        return;
                 }
             }
 
@@ -78,11 +97,25 @@ namespace V50Reward
             HandleReward(args);
         }
 
+        private static void HandleHelp(CommandArgs args)
+        {
+            string days = string.Join("、", Config.RewardDays.Select(DayName));
+            args.Player.SendInfoMessage("[i:4016] V50Reward 疯四奖 帮助：");
+            args.Player.SendInfoMessage("[i:4016] /v50 — 领取今日奖励");
+            args.Player.SendInfoMessage("[i:4016] /v50 help — 查看本帮助");
+            args.Player.SendInfoMessage("[i:4016] /v50 reload — 重载配置（管理员）");
+            args.Player.SendInfoMessage("[i:4016] /v50 reset — 重置所有玩家领取记录（管理员）");
+            args.Player.SendInfoMessage("[i:4016] /v50 reset <玩家名> — 重置指定玩家记录（管理员）");
+            args.Player.SendInfoMessage($"[i:4016] 本周可领取日：{days}，每周限领 {Config.MaxRewardsPerWeek} 次。");
+        }
+
         private static void HandleReward(CommandArgs args)
         {
             var player = args.Player;
 
+            // 周编号：1=周一 ... 7=周日（DateTime.DayOfWeek 中 周日=0，需转换）
             int today = (int)DateTime.UtcNow.DayOfWeek;
+            if (today == 0) today = 7;
             if (!Config.RewardDays.Contains(today))
             {
                 string days = string.Join("、", Config.RewardDays.Select(d => DayName(d)));
@@ -247,28 +280,26 @@ namespace V50Reward
 
         private static string DayName(int day) => day switch
         {
-            0 => "周日",
             1 => "周一",
             2 => "周二",
             3 => "周三",
             4 => "周四",
             5 => "周五",
             6 => "周六",
+            7 => "周日",
             _ => $"未知({day})"
         };
 
-        private static string GetWeekKey()
-        {
-            var now = DateTime.UtcNow;
-            int week = System.Globalization.ISOWeek.GetWeekOfYear(now);
-            return $"{now.Year}-W{week:D2}";
-        }
+        private static string GetWeekKey() => GetWeekKey(DateTime.UtcNow);
 
-        private static string GetLastWeekKey()
+        private static string GetLastWeekKey() => GetWeekKey(DateTime.UtcNow.AddDays(-7));
+
+        private static string GetWeekKey(DateTime date)
         {
-            var lastWeek = DateTime.UtcNow.AddDays(-7);
-            int week = System.Globalization.ISOWeek.GetWeekOfYear(lastWeek);
-            return $"{lastWeek.Year}-W{week:D2}";
+            // ISO 周号跨年时要使用 ISO 年（如 12月31日 属于次年 W01）
+            int year = System.Globalization.ISOWeek.GetYear(date);
+            int week = System.Globalization.ISOWeek.GetWeekOfYear(date);
+            return $"{year}-W{week:D2}";
         }
 
         private static void LoadConfig()
@@ -292,6 +323,50 @@ namespace V50Reward
                 NotifyAdmins("[i:4016] V50Reward 配置加载失败，已使用默认配置！");
                 Config = new PluginConfig();
             }
+
+            if (SanitizeRewardDays())
+            {
+                TShock.Log.Info("V50Reward: RewardDays 配置已自动清洗（去重 / 0=周日兼容 / 过滤无效值），正在保存修复后的配置...");
+                SaveConfig();
+            }
+        }
+
+        /// <summary>
+        /// 清洗可领取日：周编号规范为 1=周一 ... 7=周日，
+        /// 兼容旧写法 0=周日、去除重复、剔除 1~7 之外的无效值。
+        /// 返回 true 表示配置发生了修正。
+        /// </summary>
+        private static bool SanitizeRewardDays()
+        {
+            if (Config.RewardDays == null)
+                Config.RewardDays = new List<int>();
+
+            var normalized = new List<int>();
+            var seen = new HashSet<int>();
+            bool changed = false;
+
+            foreach (var day in Config.RewardDays)
+            {
+                int value = day == 0 ? 7 : day;   // 兼容旧写法 0=周日
+                if (value < 1 || value > 7)
+                {
+                    changed = true;
+                    TShock.Log.Info($"V50Reward: 忽略无效的领取日 {day}（有效为 1~7，周日为 7）");
+                    continue;
+                }
+                if (seen.Add(value))
+                {
+                    normalized.Add(value);
+                }
+                else
+                {
+                    changed = true;
+                    TShock.Log.Info($"V50Reward: 去除重复的领取日 {day}");
+                }
+            }
+
+            Config.RewardDays = normalized;
+            return changed;
         }
 
         private static void SaveConfig()
@@ -344,7 +419,7 @@ namespace V50Reward
 
         private class PluginConfig
         {
-            public List<int> RewardDays { get; set; } = [4]; // 默认周四 (0=周日,1=周一,...,6=周六)
+            public List<int> RewardDays { get; set; } = [4]; // 默认周四 (1=周一,2=周二,...,7=周日)
             public int MaxRewardsPerWeek { get; set; } = 1;
             public bool SkipDefault { get; set; } = true;
             public ItemData DefaultReward { get; set; } = new ItemData { netID = ItemID.GoldCoin, prefix = 0, stack = 50 };
