@@ -2,7 +2,27 @@
 记录和tshock有关的内容，转载部分官方文档，自己写的插件，以及保存代码量小，且不怎么更新的小插件。
 <br>
 
-# docker快速开服
+## 1.4.5.7 和 1.4.5.8
+> 2026-08-20 05:09:03  1.4.5.7发布
+> 2026-08-24 02:47:12  1.4.5.8发布
+
+
+### 8月24日
+基于 OTAPI v3.3.14 重新编译，支持泰拉1.4.5.8，让AI做的适配，仅供尝鲜。
+
+- Linux版本：[TShock-1.4.5.8-linux-x64-hf-0824.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-linux-x64-hf-0824.zip)
+- Windows版本：[TShock-1.4.5.8-win-x64-hf-0824.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-win-x64-hf-0824.zip)
+> (这次为了压缩体积，zip里面不含 TShock.Installer 文件)
+
+### 插件更新
+
+- [ShowMe-v1.3-1457.dll](https://github.com/hufang360/TShockShowMe/releases/download/v1.3/ShowMe-v1.3-1457.dll)
+（修复 1.4.5.7 下 Item.active → IsAir 的 API 变更）
+
+
+
+
+## docker快速开服
 ```shell
 docker run -it --name tshock \
   -p 7777:7777 \
@@ -36,10 +56,11 @@ docker logs -f tshock
   - 个人常用的插件, 见本仓库 [dlls](./dlls/) 
 <br>
 
+---
 
-# 我写过的插件
+## 我写过的插件
 
-## 常用
+### 常用
 - 🔐 [AutoRegister](https://github.com/hufang360/TShockAutoRegister), 自动注册
 - 🚀 [FastDeploy](https://github.com/hufang360/TShockFastDeploy), 快速开服, TShock4.x也能用
 - 🌍 [WorldModify](https://github.com/hufang360/TShockWorldModify), 世界修改器, v1.4beta版本开始支持TShock5.0和泰拉1.4.4.x
@@ -50,7 +71,7 @@ docker logs -f tshock
 - 📦 [ChestTool](https://github.com/hufang360/TShockChestTool), 箱子小工具
 
 
-## 更多
+### 更多
 这部分不怎么更新
 
 - 💎 [Pylon](https://github.com/hufang360/TShockPylon), 指令晶塔
@@ -66,7 +87,7 @@ docker logs -f tshock
 - 🚫👾 [DisableNPC](https://github.com/hufang360/TShockDisableNPC), 禁NPC
 - 🚫🎣 [DisableFishing](https://github.com/hufang360/TShockDisableFishing), 禁钓鱼
 
-## 弃坑
+### 弃坑
 - 📚 [GoodStudy](https://github.com/hufang360/TShockGoodStudy), 好好学习, 已弃坑
 - 🌙 [LongNight](https://github.com/hufang360/TShockLongNight), 永夜, 已弃坑
 - 💀 [DeathCounter](https://github.com/hufang360/TShockDeathCounter), 死亡统计, 已弃坑
@@ -74,12 +95,13 @@ docker logs -f tshock
 - 🌌 [AllowFirstFractal](https://github.com/hufang360/TShockAllowFirstFractal), 让服务端允许生成"第一分形", 鱼店插件默认包含此功能
 
 
-## 非独立项目
+### 非独立项目
 代码量小，不怎么更新，保存在本仓库内。
 - 🎯 [hfToy](./Plugins/TShockhfToy1), 射弹发射器, [hfToy1.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/hfToy1.dll)
 - 🤔 [BossOrNurse](./Plugins/TShockBossOrNurse), Boss还是护士, [BossOrNurse.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/BossOrNurse.dll)
 - 🇨🇳 [Lang7](./Plugins/TShockLang7), 将服务器语言设置成中文, [Lang7.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/Lang7.dll)
 - ⚡ [ShowPowerMenu](./Plugins/TShockShowPowerMenu), 显示力量菜单, [ShowPowerMenu.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/ShowPowerMenu.dll)
+- ⚡ [V50Reward](./Plugins/V50Reward), 疯四奖, [V50Reward.dll](https://github.com/hufang360/iTShock/raw/master/Plugins/V50Reward.dll)
 
 <br>
 
