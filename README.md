@@ -4,8 +4,8 @@
 
 ## 1.4.5.7 和 1.4.5.8
 > 2026-08-20 05:09:03  1.4.5.7发布
-> 2026-08-24 02:47:12  1.4.5.8发布
 
+> 2026-08-24 02:47:12  1.4.5.8发布
 
 ### 8月24日
 基于 OTAPI v3.3.14 重新编译，支持泰拉1.4.5.8，让AI做的适配，仅供尝鲜。
@@ -19,7 +19,16 @@
 - [ShowMe-v1.3-1457.dll](https://github.com/hufang360/TShockShowMe/releases/download/v1.3/ShowMe-v1.3-1457.dll)
 （修复 1.4.5.7 下 Item.active → IsAir 的 API 变更）
 
+- [FishShop-v1.6-1457.dll](https://github.com/hufang360/TShockFishShop/releases/download/v1.6/FishShop-v1.6-1457.dll)
+（允许生成 “6160 锐刺”、“6170 附魔计时器”、“6171 宝石法杖”）
 
+- [WorldModify-v1.6-1457.dll](https://github.com/hufang360/TShockWorldModify/releases/download/v1.6/WorldModify-v1.6-1457.dll)
+  - 修复 `/igen world` 指令，重建地图失败问题
+  - 修复 `/wm s` 指令，切换世界特性不成功问题
+  - 新增 `/wm s ml/nl/gl`指令，可以用来开关新增加的两个彩蛋种子特性。
+    - ml = moreLightning = Electric boogaloo
+    - nl = noLightning = Calm before the storm",
+    - gl = 绿色闪电 = moreLightning+noLightning",
 
 
 ## docker快速开服
