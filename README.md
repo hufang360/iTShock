@@ -7,6 +7,13 @@
 
 > 2026-08-24 02:47:12  1.4.5.8发布
 
+
+### 8月25日
+解决“使用物品电弧涌动攻击敌怪会触发一个BUFF，然后玩家立即被踢出，显示:踢出，对NPC异常地添加了BUFF”。
+
+- Linux版本：[TShock-1.4.5.8-linux-x64-hf-0825.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-linux-x64-hf-0825.zip)
+- Windows版本：[TShock-1.4.5.8-win-x64-hf-0825.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-win-x64-hf-0825.zip)
+
 ### 8月24日
 基于 OTAPI v3.3.14 重新编译，支持泰拉1.4.5.8，让AI做的适配，仅供尝鲜。
 
