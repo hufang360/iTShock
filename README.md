@@ -7,6 +7,13 @@
 
 > 2026-08-24 02:47:12  1.4.5.8发布
 
+### 9月1日
+解决 “_羽学” 反馈的 “传送枪无法生成传送门BUG。传送门弹幕id=602”。
+
+尝试解决 “力量炸弹 无法摧毁新三矿BUG。扔出的炸弹仍需在玩家视野范围内”。
+
+- Linux版本：[TShock-1.4.5.8-linux-x64-hf-0901.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-linux-x64-hf-0901.zip)
+- Windows版本：[TShock-1.4.5.8-win-x64-hf-0901.zip](https://github.com/hufang360/iTShock/releases/download/1.4.5.7/TShock-1.4.5.8-win-x64-hf-0901.zip)
 
 ### 8月25日
 解决“使用物品电弧涌动攻击敌怪会触发一个BUFF，然后玩家立即被踢出，显示:踢出，对NPC异常地添加了BUFF”。
@@ -41,11 +48,9 @@
   - 修复 `/wm re unlock`指令，不失效问题
   - 新增 `/npc shi` 指令，可以切换NPC的嬗变状态
 
-- [Search-v1.4.0-1458.dll](https://github.com/hufang360/TShockSearch/releases/download/1.4.0/Search-v1.4.0-1458.dll)
-  - 新增 `/shimmer` 指令，可查询物品的嬗变信息，指令简写 `/shi`
-    - 嬗变：该物品扔进微光后变成什么（含月总后解锁提示）；
-    - 分解：扔进微光后还原成哪些合成材料（带数量图标，含击败骷髅王/石巨人后解锁提示）；
-    - 嬗变而来：哪些物品扔进微光会变成它，数量多时自动分页；
+- [Search-v1.4.1-1458.dll](https://github.com/hufang360/TShockSearch/releases/download/1.4.1/Search-v1.4.1-1458.dll)
+  - 现在 `/recipe` 指令将额外看到微光的嬗变信息
+  - 移除上个版本的 `/shimmer` 指令
 
 ## docker快速开服
 
